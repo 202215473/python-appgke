@@ -1,22 +1,26 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: python-appgke
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: python-appgke
-  template:
-    metadata:
-      labels:
-        app: python-appgke
-    spec:
-      containers:
-      - name: python-appgke
-        image: gcr.io/icai2025/python-appgke:latest
-        imagePullPolicy: Always
-        ports:
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: lab8-app 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels: 
+      app: lab8-app 
+  template: 
+    metadata: 
+      labels: 
+        app: lab8-app 
+    spec: 
+      containers: 
+      - name: lab8-app 
+        image: gcr.io/td-lab-489107/lab8-app:latest 
+        ports: 
         - containerPort: 5000
-
-
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
