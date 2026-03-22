@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  GKE_CLUSTER: lab8-cluster
-  GKE_ZONE: us-central1-a
-  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/lab8-app
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE }}
+  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/python-appgke
 
 jobs:
   deploy:
